@@ -6,6 +6,16 @@ namespace TechJobTests
     [TestClass]
     public class JobTests
     {
+
+            Employer employer = new Employer("ACME");
+            Location location = new Location("Desert");
+            PositionType positionType = new PositionType("QualityControl");
+            CoreCompetency coreCompetency = new CoreCompetency("Persistance");
+            public Job job1;
+            public Job job2;
+            public Job job3;
+            public Job job4;
+
         [TestMethod]
         public void TestSettingJobId()
         {
@@ -17,16 +27,21 @@ namespace TechJobTests
         [TestMethod]
         public void TestJobConstructorSetsAllFields()
         {
-            Employer employer1 = new Employer("ACME");
-            Location location1 = new Location("Desert");
-            PositionType positionType1 = new PositionType("QualityControl");
-            CoreCompetency coreCompetency1 = new CoreCompetency("Persistance");
-            Job testJob = new Job("Product tester",employer1,location1,positionType1,coreCompetency1);
-            Assert.AreEqual("Product tester", testJob.Name);
-            Assert.AreEqual(employer1, testJob.EmployerName);
-            Assert.AreEqual(location1, testJob.EmployerLocation);
-            Assert.AreEqual(positionType1, testJob.JobType);
-            Assert.AreEqual(coreCompetency1, testJob.JobCoreCompetency);
+
+            Job job3 = new Job("Product tester",employer,location,positionType,coreCompetency);
+            Assert.AreEqual("Product tester", job3.Name);
+            Assert.AreEqual(employer, job3.EmployerName);
+            Assert.AreEqual(location, job3.EmployerLocation);
+            Assert.AreEqual(positionType, job3.JobType);
+            Assert.AreEqual(coreCompetency, job3.JobCoreCompetency);
+        }
+
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Job job3 = new Job("Product tester", employer, location, positionType, coreCompetency);
+            Job job4 = new Job("Product tester", employer, location, positionType, coreCompetency);
+            Assert.IsFalse(job3.Equals(job4));
         }
     }
 }
