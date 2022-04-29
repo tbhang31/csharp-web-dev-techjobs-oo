@@ -65,7 +65,7 @@ namespace TechJobsOO
                 }
                 if (EmployerLocation.ToString() == "")
                 {
-                    EmployerName.Value = "Data not available";
+                    EmployerLocation.Value = "Data not available";
                 }
                 if (JobType.ToString() == "")
                 {
@@ -76,7 +76,7 @@ namespace TechJobsOO
                     JobCoreCompetency.Value = "Data not available";
                 }
             }
-            return $"ID: {Id}\nName: {Name}\nEmployer:{EmployerName.ToString()} \nLocation:{EmployerLocation.ToString()} \nPosition Type:{JobType.ToString()} \nCore Competency:{JobCoreCompetency.ToString()}";
+            return $"ID: {Id}\nName: {Name}\nEmployer: {EmployerName.ToString()} \nLocation: {EmployerLocation.ToString()} \nPosition Type: {JobType.ToString()} \nCore Competency: {JobCoreCompetency.ToString()}\n";
         }
     }
 }

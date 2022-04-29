@@ -1,27 +1,10 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Location
+    public class Location : JobField
     {
-        public int Id { get; }
-        private static int nextId = 1;
-        public string Value { get; set; }
-
-        public Location()
+        public Location (string value) : base (value)
         {
-            Id = nextId;
-            nextId++;
-        }
-
-        public Location (string value) : this()
-        {
-            Value = value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is Location location &&
-                   Id == location.Id;
         }
 
         public override int GetHashCode()
@@ -31,7 +14,17 @@ namespace TechJobsOO
 
         public override string ToString()
         {
+            if (Value == "")
+            {
+                return "Data not available";
+            }
             return Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Location location &&
+            Id == location.Id;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TechJobTests
 
         public Employer employer = new Employer("ACME");
         public Location location = new Location("Desert");
-        public PositionType positionType = new PositionType("QualityControl");
+        public PositionType positionType = new PositionType("Quality Control");
         public CoreCompetency coreCompetency = new CoreCompetency("Persistance");
         public Job job1;
         public Job job2;
@@ -47,10 +47,11 @@ namespace TechJobTests
         [TestMethod]
         public void TestJobToStringOutput()
         {
-            job3 = new Job("Product tester", employer, location, positionType, coreCompetency);
             job4 = new Job();
             Assert.AreEqual(job4.ToString(), "OOPS! This Job doesn't exist!");
-            Assert.AreEqual(job3.ToString(), $"ID: {job3.Id}\nName: {job3.Name}\nEmployer:{job3.EmployerName.ToString()} \nLocation:{job3.EmployerLocation.ToString()} \nPosition Type:{job3.JobType.ToString()} \nCore Competency:{job3.JobCoreCompetency.ToString()}");
+            job3 = new Job("Product tester", employer, location, positionType, coreCompetency);
+            Assert.AreEqual(job3.ToString(), $"ID: {job3.Id}\nName: {job3.Name}\nEmployer: {job3.EmployerName.ToString()} \nLocation: {job3.EmployerLocation.ToString()} \nPosition Type: {job3.JobType.ToString()} \nCore Competency: {job3.JobCoreCompetency.ToString()}");
+
 
         }
 
