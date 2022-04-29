@@ -46,5 +46,37 @@ namespace TechJobsOO
                    EqualityComparer<PositionType>.Default.Equals(JobType, job.JobType) &&
                    EqualityComparer<CoreCompetency>.Default.Equals(JobCoreCompetency, job.JobCoreCompetency);
         }
+
+        public override string ToString()
+        {
+            if (Name == null && EmployerName == null && EmployerLocation == null && JobType == null && JobCoreCompetency == null)
+            {
+                return "OOPS! This Job doesn't exist!";
+            }
+            else
+            {
+                if (Name == "")
+                {
+                    Name = "Data not available";
+                }
+                if (EmployerName.ToString() == "")
+                {
+                    EmployerName.Value = "Data not available";
+                }
+                if (EmployerLocation.ToString() == "")
+                {
+                    EmployerName.Value = "Data not available";
+                }
+                if (JobType.ToString() == "")
+                {
+                    JobType.Value = "Data not available";
+                }
+                if (JobCoreCompetency.ToString() == "")
+                {
+                    JobCoreCompetency.Value = "Data not available";
+                }
+            }
+            return $"ID: {Id}\nName: {Name}\nEmployer:{EmployerName.ToString()} \nLocation:{EmployerLocation.ToString()} \nPosition Type:{JobType.ToString()} \nCore Competency:{JobCoreCompetency.ToString()}";
+        }
     }
 }
