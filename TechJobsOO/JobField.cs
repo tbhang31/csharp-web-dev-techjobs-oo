@@ -22,10 +22,24 @@ namespace TechJobsOO
             Value = value;
         }
 
-        public abstract override string ToString();
+        public override string ToString()
+        {
+          if (Value == "")
+          {
+            return "Data not available";
+          }
+          return Value;
+        }
 
-        public abstract override int GetHashCode();
+        public override int GetHashCode()
+        {
+             return HashCode.Combine(Id);
+        }
 
-        public abstract override bool Equals(object obj);
+        public override bool Equals(object obj)
+        {
+            return obj is JobField job &&
+            Id == job.Id;
+        }
     }
 }

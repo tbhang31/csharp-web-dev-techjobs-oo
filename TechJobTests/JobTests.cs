@@ -50,7 +50,7 @@ namespace TechJobTests
             job4 = new Job();
             Assert.AreEqual(job4.ToString(), "OOPS! This Job doesn't exist!");
             job3 = new Job("Product tester", employer, location, positionType, coreCompetency);
-            Assert.AreEqual(job3.ToString(), $"ID: {job3.Id}\nName: {job3.Name}\nEmployer: {job3.EmployerName.ToString()} \nLocation: {job3.EmployerLocation.ToString()} \nPosition Type: {job3.JobType.ToString()} \nCore Competency: {job3.JobCoreCompetency.ToString()}\n");
+            Assert.AreEqual(job3.ToString(), $"ID: {job3.Id}\nName: {job3.Name}\nEmployer: {job3.EmployerName} \nLocation: {job3.EmployerLocation} \nPosition Type: {job3.JobType} \nCore Competency: {job3.JobCoreCompetency}\n");
         }
 
     }

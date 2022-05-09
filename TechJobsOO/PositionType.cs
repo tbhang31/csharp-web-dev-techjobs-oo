@@ -7,20 +7,6 @@ namespace TechJobsOO
         {
         }
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            if (Value == "")
-            {
-                return "Data not available";
-            }
-            return Value;
-        }
-
         public override bool Equals(object obj)
         {
             return obj is PositionType positionType &&

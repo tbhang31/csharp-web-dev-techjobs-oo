@@ -29,8 +29,6 @@ namespace TechJobsOO
             JobCoreCompetency = jobCoreCompetency;
         }
 
-
-
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Name, EmployerName, EmployerLocation, JobType, JobCoreCompetency);
